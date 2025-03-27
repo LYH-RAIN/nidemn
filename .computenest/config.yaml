@@ -61,7 +61,7 @@ Artifact:
         Branch: main
       RegionId: ap-southeast-1
       CommandType: RunShellScript
-      SourceImageId: aliyun/services/computenest/images/aliyun_3_2104_python_3_11
+      SourceImageId: aliyun/services/ecs/images/linux/aliyun-latest/alibaba_cloud_linux_3_2104_lts_x64
       CommandContent: |-
         mkdir -p /root/application
         cp -r /root/code/./* /root/application/;
