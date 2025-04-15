@@ -1,71 +1,67 @@
-Artifact:
-  EcsImage:
-    ArtifactBuildProperty:
-      CodeRepo:
-        Branch: main
-        Owner: LYH-RAIN
-        Platform: github
-        RepoName: LYH-RAIN/nidemn
-      CommandContent: 'mkdir -p /root/application
-
-        cp -r /root/code/./* /root/application/;'
-      CommandType: RunShellScript
-      RegionId: ap-southeast-1
-      SourceImageId: aliyun/services/ecs/images/linux/aliyun-latest/alibaba_cloud_linux_3_2104_lts_x64
-    ArtifactName: ecs_image_nidemn
-    ArtifactType: EcsImage
-    Description: nidemn EcsImage
-    SupportRegionIds:
-    - ap-southeast-1
 Service:
+  RegionId: cn-hangzhou
+  DeployType: ros
+  OperationMetadata:
+    StatusOperationConfigs:
+      - TemplateName: ECS单机版
+        SupportOperations:
+          - Start
+          - Stop
+          - Restart
+    SupportBackup: true
+    ModifyParametersConfig:
+      - TemplateName: ECS单机版
+        Operation:
+          - Name: 变更ECS实例规格
+            Description: 变更ECS实例规格
+            Type: Custom
+            Parameters:
+              - EcsInstanceType
+          - Name: 变更ECS实例密码
+            Description: 变更ECS实例密码
+            Type: Custom
+            Parameters:
+              - InstancePassword
   DeployMetadata:
     SupplierDeployMetadata:
+      SupplierTemplateConfigs:
+        - Name: ECS单机版
+          Url: 'ros_templates/template.yaml'
+          ArchitectureDiagramUrl: 'resources/architecture/architecture.jpg'
+          AllowedRegions:
+            - ap-southeast-1
       ArtifactRelation:
         ecs_image_nidemn:
           ArtifactId: ${Artifact.EcsImage.ArtifactId}
           ArtifactVersion: draft
-      SupplierTemplateConfigs:
-      - AllowedRegions:
-        - ap-southeast-1
-        ArchitectureDiagramUrl: resources/architecture/architecture.jpg
-        Name: ECS单机版
-        Url: ros_templates/template.yaml
     TemplateConfigs:
-    - AllowedRegions:
-      - ap-southeast-1
-      ArchitectureDiagramUrl: resources/architecture/architecture.jpg
-      Name: ECS单机版
-      Url: ros_templates/template.yaml
-  DeployType: ros
-  OperationMetadata:
-    ModifyParametersConfig:
-    - Operation:
-      - Description: 变更ECS实例规格
-        Name: 变更ECS实例规格
-        Parameters:
-        - EcsInstanceType
-        Type: Custom
-      - Description: 变更ECS实例密码
-        Name: 变更ECS实例密码
-        Parameters:
-        - InstancePassword
-        Type: Custom
-      TemplateName: ECS单机版
-    StatusOperationConfigs:
-    - SupportOperations:
-      - Start
-      - Stop
-      - Restart
-      TemplateName: ECS单机版
-    SupportBackup: true
-  RegionId: cn-hangzhou
-  ServiceInfo:
-  - Image: https://service-info-public.oss-cn-hangzhou.aliyuncs.com/1853370294850618/service-image/bfd30cc4-e959-4093-b5cb-77a05058b911.png
-    Locale: zh-CN
-    Name: LYH-RAIN/nidemn-81fh
-    ShortDescription: Service description
-    SoftwareInfos:
-    - Locale: zh-CN
-      Name: aa
-      Version: bb
+      - Name: ECS单机版
+        Url: 'ros_templates/template.yaml'
+        ArchitectureDiagramUrl: 'resources/architecture/architecture.jpg'
+        AllowedRegions:
+          - ap-southeast-1
   ServiceType: private
+  ServiceInfo:
+    # 英文版可以再配置Locale为en-US的服务信息
+    - Locale: zh-CN
+      ShortDescription: demo
+      Image: 'resources/icons/service_logo.png'
+Artifact:
+  EcsImage:
+    ArtifactType: EcsImage
+    ArtifactName: ecs_image_nidemn
+    Description: nidemn EcsImage
+    SupportRegionIds:
+        - ap-southeast-1
+    ArtifactBuildProperty:
+      CodeRepo:
+        Platform: github
+        Owner: LYH-RAIN
+        RepoName: LYH-RAIN/nidemn
+        Branch: main
+      RegionId: ap-southeast-1
+      CommandType: RunShellScript
+      SourceImageId: aliyun/services/ecs/images/linux/aliyun-latest/alibaba_cloud_linux_3_2104_lts_x64
+      CommandContent: |-
+        mkdir -p /root/application
+        cp -r /root/code/./* /root/application/;
