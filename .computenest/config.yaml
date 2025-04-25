@@ -44,7 +44,7 @@ Service:
   ServiceInfo:
     # 英文版可以再配置Locale为en-US的服务信息
   - Locale: zh-CN
-    Name: LYH-RAIN/nidemn-g1x2
+    Name: LYH-RAIN/nidemn-xz7j
     ShortDescription: Service description
     Image: 
       https://service-info-public.oss-cn-hangzhou.aliyuncs.com/1853370294850618/service-image/bfd30cc4-e959-4093-b5cb-77a05058b911.png
@@ -64,8 +64,7 @@ Artifact:
         Branch: main
       RegionId: ap-southeast-1
       CommandType: RunShellScript
-      SourceImageId: 
-        aliyun/services/ecs/images/linux/aliyun-latest/alibaba_cloud_linux_3_2104_lts_x64
+      SourceImageId: aliyun/services/computenest/images/aliyun_3_2104_go_1_22
       CommandContent: |-
         mkdir -p /root/application
         cp -r /root/code/./* /root/application/;
