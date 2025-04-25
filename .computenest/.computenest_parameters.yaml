@@ -1,1 +1,19 @@
-
+RepoName: LYH-RAIN/nidemn
+RunCommand: |
+  echo "start run command"
+SourceCodePath: .
+CommandTimeout: 3600
+SecurityGroupPorts:
+- 80
+RuntimeType: LinuxShell
+ServicePorts:
+- 80
+ServiceType: private
+ArtifactSourceType: SourceCode
+ServiceBuildRegion: ap-southeast-1
+ImageId: '"{{resolve:oos:aliyun/services/ecs/images/linux/aliyun-latest/alibaba_cloud_linux_3_2104_lts_x64}}"'
+RegionId: cn-hangzhou
+CustomParameters: ''
+Owner: LYH-RAIN
+Branch: main
+Platform: github
