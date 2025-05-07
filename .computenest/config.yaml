@@ -52,7 +52,7 @@ Service:
 Artifact:
   EcsImage:
     ArtifactType: EcsImage
-    ArtifactName: ecs_image_nidemn
+    ArtifactName: ecs_image_nidemnadadadasdasdasdadasdasdasdasdadadsdadasdasdasdasdasdasdasdasdasdasdasdasdadadasdasdasdasdaddasdasdasdasdasdasdasdsdasdasdasdasdasdasdasdasdasdasdadasdasdasdasdsdsadasjdoajoasdjoadjjasodajsijdsjaodjoasdoijajdijsaoidiasdiojasiodjioasjdojasoidiojasoidjoijdioa
     Description: nidemn EcsImage
     SupportRegionIds:
     - ap-southeast-1
