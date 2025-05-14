@@ -5,7 +5,7 @@ Service:
     StatusOperationConfigs:
     - TemplateName: ECS单机版
       SupportOperations:
-      - Start
+      - Start:
       - Stop
       - Restart
     SupportBackup: true
@@ -44,8 +44,8 @@ Service:
   ServiceInfo:
     # 英文版可以再配置Locale为en-US的服务信息
   - Locale: zh-CN
-    Name: LYH-RAIN/nidemn-50i2
-    ShortDescription: Service description
+    Name: 试试空格1
+    ShortDescription: Servicedescription
     Image: 
       https://service-info-public.oss-cn-hangzhou.aliyuncs.com/1853370294850618/service-image/bfd30cc4-e959-4093-b5cb-77a05058b911.png
     Softwares: []
