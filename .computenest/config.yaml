@@ -5,7 +5,7 @@ Service:
     StatusOperationConfigs:
     - TemplateName: ECS单机版
       SupportOperations:
-      - Start:
+      - Start
       - Stop
       - Restart
     SupportBackup: true
@@ -30,6 +30,7 @@ Service:
         ArchitectureDiagramUrl: 'resources/architecture/architecture.jpg'
         AllowedRegions:
         - ap-southeast-1
+        - cn-hangzhou
       ArtifactRelation:
         ecs_image_nidemn:
           ArtifactId: ${Artifact.EcsImage.ArtifactId}
