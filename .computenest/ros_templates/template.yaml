@@ -257,7 +257,7 @@ Resources:
         Ref: ZoneId
       SecurityGroupId:
         Ref: SecurityGroup
-      ImageId: ecs_image_nidemn
+      ImageId: ecs
       Password:
         Ref: InstancePassword
       InstanceType:
