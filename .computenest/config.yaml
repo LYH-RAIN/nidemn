@@ -51,7 +51,6 @@ Service:
     Softwares:
     - Name: aa
       Version: bb
-      Locale: zh-CN
 Artifact:
   EcsImage:
     ArtifactType: EcsImage
