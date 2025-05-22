@@ -33,7 +33,7 @@ Service:
       ArtifactRelation:
         ecs_image_nidemn:
           ArtifactId: ${Artifact.EcsImage.ArtifactId}
-          ArtifactVersion: draft
+          ArtifactVersion: 
     TemplateConfigs:
     - Name: ECS单机版
       Url: 'ros_templates/template.yaml'
