@@ -4,7 +4,9 @@ Service:
   ：aaB:
   DeployType: ros
   OperationMetadata:
-  
+  DeployType
+  DeployTypeDeployType
+  DeployTypeDeployTypeDeployTypeDeployTypeDeployType
     StatusOperationConfigs:
     aab
     - TemplateName: ECS单机版
