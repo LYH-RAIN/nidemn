@@ -1,14 +1,8 @@
 Service:
-
-#  RegionId: cn-hangzhou
-  ：aaB:
+  RegionId: cn-hangzhou
   DeployType: ros
   OperationMetadata:
-  DeployType
-  DeployTypeDeployType
-  DeployTypeDeployTypeDeployTypeDeployTypeDeployType
     StatusOperationConfigs:
-    aab
     - TemplateName: ECS单机版
       SupportOperations:
       - Start
@@ -39,7 +33,7 @@ Service:
       ArtifactRelation:
         ecs_image_nidemn:
           ArtifactId: ${Artifact.EcsImage.ArtifactId}
-          ArtifactVersion:
+          ArtifactVersion: draft
     TemplateConfigs:
     - Name: ECS单机版
       Url: 'ros_templates/template.yaml'
@@ -50,7 +44,7 @@ Service:
   ServiceInfo:
     # 英文版可以再配置Locale为en-US的服务信息
   - Locale: zh-CN
-    Name: LYH-RAIN/nidemn-airg
+    Name: LYH-RAIN/nidemn-staj
     ShortDescription: Service description
     Image: 
       https://service-info-public.oss-cn-hangzhou.aliyuncs.com/1853370294850618/service-image/bfd30cc4-e959-4093-b5cb-77a05058b911.png
@@ -70,7 +64,8 @@ Artifact:
         Branch: main
       RegionId: ap-southeast-1
       CommandType: RunShellScript
-      SourceImageId: aliyun/services/computenest/images/aliyun_3_2104_go_1_22
+      SourceImageId: 
+        aliyun/services/ecs/images/linux/aliyun-latest/alibaba_cloud_linux_3_2104_lts_x64
       CommandContent: |-
         mkdir -p /root/application
         cp -r /root/code/./* /root/application/;
